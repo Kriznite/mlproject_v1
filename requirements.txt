@@ -1,5 +1,5 @@
 pandas
-numpy
+numpy==1.26
 seaborn
 matplotlib
 scikit-learn
@@ -8,4 +8,4 @@ xgboost
 dill
 Flask
 
-#-e .
+# -e .
