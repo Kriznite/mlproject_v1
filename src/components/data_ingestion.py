@@ -53,8 +53,12 @@ if __name__== "__main__":
     train_data,test_data = obj.initiate_data_ingestion()
     
     data_transformation =  DataTransformation()
-    train_array, test_array,_ = data_transformation.initiate_data_transformation(train_data,test_data)
+    train_arr, test_arr,_ = data_transformation.initiate_data_transformation(train_data,test_data)
     model_trainer=ModelTrainer()
+    model_eval_score = model_trainer.initiate_model_trainer(train_arr,test_arr)
     print(
-        model_trainer.initiate_model_trainer(train_array,test_array)
+        f"The best R2 Score: {model_eval_score}"
     )
+    # logging.info( f"The best R2 Score without hyper parameter turning : {model_eval_score}")
+    logging.info( f"The best R2 Score with hyper parameter turning : {model_eval_score}")
+    
